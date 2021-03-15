@@ -1,0 +1,36 @@
+<mat-toolbar class = "content">
+    <mat-toolbar-row class = "header">
+      <span>Please Enter The Details</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+  
+  <!-- wrapper -->
+<mat-sidenav-container >
+    <mat-sidenav-content class = "content">
+      <form [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name of Food" formControlName="name">
+          <mat-error *ngIf="errorHandling('name', 'required')">
+            You must provide the Name 
+          </mat-error>
+        </mat-form-field>
+        <br>
+      
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Kind of the Food" formControlName="kind" >
+          <mat-error *ngIf="errorHandling('kind', 'required')">
+            You must provide the Kind
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+        <!-- Submit -->
+        <div class="button-wrapper" style = "text-align: -webkit-right;">
+          <button mat-raised-button  (click) = "close()">Close</button> &nbsp;&nbsp;
+          <button mat-flat-button color="primary" [disabled]="!myForm.valid">Submit</button>         
+        </div>
+        <br>
+      </form>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

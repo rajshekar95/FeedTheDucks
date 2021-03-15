@@ -1,0 +1,63 @@
+<mat-toolbar class = "content">
+    <mat-toolbar-row class = "header">
+      <span>Please Enter The Details</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+  
+  <!-- wrapper -->
+<mat-sidenav-container >
+    <mat-sidenav-content class = "content">
+      <form [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Location" formControlName="location">
+          <mat-error *ngIf="errorHandling('location', 'required')">
+            You must provide the Location name
+          </mat-error>
+        </mat-form-field>
+        <br>
+      
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Total Number of Ducks fed" formControlName="totalNoOfDucks" type="number">
+          <mat-error *ngIf="errorHandling('totalNoOfDucks', 'required')">
+            You must provide total Number of ducks fed today
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Total Quantity (In Grams)" formControlName="quantity" type="number">
+            <mat-error *ngIf="errorHandling('quantity', 'required')">
+              You must provide total quantity
+            </mat-error>
+        </mat-form-field>
+        <br>
+  
+        <mat-form-field class="example-full-width"> 
+          <mat-label>Food Name</mat-label>
+          <mat-select [(value)]="selected" formControlName="foodTypeId" (selectionChange)='setFoodType()'>
+            <mat-option  *ngFor="let foodType of foodTypes" [value]=foodType.typeId>{{foodType.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Food Type"  value = "{{foodKind}}" disabled >
+        </mat-form-field>
+        <br>
+
+        <mat-slide-toggle color="primary" formControlName="scheduler">
+            <span class = "header"  >Scheduler</span> <span class = "message">(Yes, make things easier for you!)</span>
+         </mat-slide-toggle>
+         <br><br>
+
+        <!-- Submit -->
+        <div class="button-wrapper" style = "text-align: -webkit-right;">
+          <button mat-raised-button  (click) = "close()">Close</button> &nbsp;&nbsp;
+          <button mat-flat-button color="primary" [disabled]="!myForm.valid">Submit</button>         
+        </div>
+        <br>
+      </form>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

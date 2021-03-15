@@ -1,0 +1,5 @@
+<div class="snackcontainer">
+  <mat-icon *ngIf="data && data.type && data.type==='E'">error</mat-icon>
+  <mat-icon *ngIf="data && data.type && data.type==='S'">done</mat-icon>
+  <div class="message">{{data.msg}}</div>
+</div>

@@ -1,0 +1,18 @@
+.icon-header {
+    padding: 0 14px;
+    width: 45px;
+    height: 45px;
+    font-size: 40px;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.button:active, 
+ button:active,
+.button:focus, 
+ button:focus,
+.button:hover, 
+ button:hover{
+    border:none !important;
+    outline:none !important;
+}

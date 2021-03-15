@@ -1,0 +1,25 @@
+.example-full-width{
+    width : 100%;
+}
+.content{
+    background: white;
+}
+.header{
+    font-weight: lighter;
+    font-size: medium;
+}
+.message{
+    font-weight: lighter;
+    font-size: x-small;
+    color: gray;
+    padding-left: 10px;
+}
+.button:active, 
+ button:active,
+.button:focus, 
+ button:focus,
+.button:hover, 
+ button:hover{
+    border:none !important;
+    outline:none !important;
+}

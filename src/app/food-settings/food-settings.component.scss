@@ -1,0 +1,29 @@
+.table-content{
+    width: 100%;
+}
+
+.body{
+    margin:2%;
+}
+.mat-form-field-flex{
+    background: white;
+
+}
+.inpt{
+    min-width:  190px;
+    min-height: 22px;
+}
+.fab-bottom-right{
+    position: fixed !important;
+    right: 2%; 
+    bottom: 2%;
+}
+.button:active, 
+ button:active,
+.button:focus, 
+ button:focus,
+.button:hover, 
+ button:hover{
+    border:none !important;
+    outline:none !important;
+}
